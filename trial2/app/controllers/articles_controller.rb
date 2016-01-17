@@ -8,5 +8,11 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     render :new
-  end  	
+  end 
+
+ def create
+    article_params = params.require(:article).permit(:title, :content)
+    @article = Article.create(article_params)
+    redirect_to "/users/#{params[:user_id]}/articles/#{params[:article_id]}"
+  end   	
 end
