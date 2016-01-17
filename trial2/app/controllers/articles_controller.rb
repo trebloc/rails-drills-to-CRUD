@@ -3,5 +3,10 @@ class ArticlesController < ApplicationController
     @articles = Article.all
 
     render :index
-  end	
+  end
+
+  def new
+    @article = Article.new
+    render :new
+  end  	
 end
