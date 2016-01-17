@@ -4,4 +4,6 @@
   <br>
   <div>
   	<p><%= @article.content %></p>
-  </div>	
+  </div>
+  <%= button_to "Delete", "/users/#{params[:user_id]}/articles", method: :delete %>
+

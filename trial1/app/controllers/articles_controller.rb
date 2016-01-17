@@ -29,5 +29,13 @@ class ArticlesController < ApplicationController
     @article = Article.find_by_id(params[:id])
     @article.update_attributes(article_params)
     redirect_to 
-   end 
+   end
+
+def destroy
+    @article = Article.find_by_id(params[:id])
+    article = Article.find_by_id(article_id)
+    article.destroy
+
+    redirect_to "/users/#{params[:user_id]}/articles"
+  end    
 end
