@@ -1,6 +1,7 @@
+<h1>Articles</h1>  
+
 <% @articles.each do |article| %>
-  <div>
-    <h3><%= link_to article.title, "/users/#{params[:user_id]}/articles/#{article.id}" %></h3>
-  </div>
-  <br>
+	<ul>    
+    <li>Title: <%= link_to article.title, "/users/#{params[:user_id]}/articles/#{article.id}" %></li>
+  </ul>  
 <% end %>

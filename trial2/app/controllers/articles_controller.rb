@@ -10,10 +10,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article_params = params.require(:article).permit(:title, :content)
     @article = Article.create(article_params)
+	  redirect_to user_articles_path
 
-    redirect_to "/users/#{params[:user_id]}/articles/#{params[:article_id]}"
+    # redirect_to "/users/#{params[:user_id]}/articles/#{params[:article_id]}"
   end  
   def show
     @article = Article.find(params[:id])
@@ -25,15 +25,19 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article_params = params.require(:article).permit(:title, :content)
     @article = Article.find_by_id(params[:id])
     @article.update_attributes(article_params)
-    redirect_to 
    end
 
-def destroy
+  def destroy
     @article = Article.find_by_id(params[:id])
     @article.destroy
-    redirect_to "/users/#{params[:user_id]}/articles"
-  end     
+    redirect_to user_articles_path
+  end  
+
+  private
+
+  def article_params
+      params.require(:article).permit(:title, :content)
+  end      
 end
