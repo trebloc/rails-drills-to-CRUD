@@ -1,5 +1,5 @@
 <h1>Edit Article</h1>
-<%= form_for :article, url: "/users/#{params[:user_id]}/articles/#{params[:id]}", method: "patch" do |f| %>
+<%= form_for :article, url: patch_article_path(:id => @article.id), method: "patch" do |f| %> 
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
