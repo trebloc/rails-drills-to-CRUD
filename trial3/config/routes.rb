@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'articles/index'
+
+  get 'articles/show'
+
+  get 'articles/edit'
+
+  get 'articles/new'
+
   root to: "users#index"
 
 #Users
