@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all
+	def index
+		@articles = Article.all
     render :index
   end
 
@@ -9,14 +9,19 @@ class ArticlesController < ApplicationController
     render :new  	
   end
 
- def create
+ 	def create
     @article = Article.create(article_params)
 	  redirect_to user_articles_path
   end 
 
+  def show
+    @article = Article.find(params[:id])
+    render :show
+  end    
+
 	private
 
-   def article_params
+  def article_params
    	params.require(:article).permit(:title, :content)
   end 
 end
