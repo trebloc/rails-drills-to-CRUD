@@ -17,6 +17,16 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     render :show
+  end  
+
+  def edit
+    @article = Article.find_by_id(params[:id])
+  end
+
+  def update
+    @article = Article.find_by_id(params[:id])
+    @article.update_attributes(article_params)
+    render :show
   end    
 
 	private

@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   get "/users/:user_id/articles/new", to: "articles#new", as: "new_article"  
   post "/users/:user_id/articles/:id", to: "articles#create"
   get "/users/:user_id/articles/:id", to: "articles#show"  
+  get "/users/:user_id/articles/:id/edit", to: "articles#edit", as: "edit_article"
+  patch "/users/:user_id/articles/:id", to: "articles#update", as: "patch_article"  
 
 end
