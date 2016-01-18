@@ -14,7 +14,5 @@ Rails.application.routes.draw do
 
 #Articles
   get "/users/:user_id/articles", to: "articles#index", as: "user_articles"
-  get 'articles/show'
-  get 'articles/edit'
-  get 'articles/new'  
+  get "/users/:user_id/articles/new", to: "articles#new", as: "new_article"  
 end
