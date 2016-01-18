@@ -2,6 +2,6 @@
 
 <% @articles.each do |article| %>
 	<ul>    
-    <li>Title: <%= link_to article.title, "/users/#{params[:user_id]}/articles/#{article.id}" %></li>
+    <li>Title: <%= link_to article.title, "user_articles_path" %></li>
   </ul>  
 <% end %>
