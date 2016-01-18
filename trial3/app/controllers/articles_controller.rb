@@ -27,7 +27,13 @@ class ArticlesController < ApplicationController
     @article = Article.find_by_id(params[:id])
     @article.update_attributes(article_params)
     render :show
-  end    
+  end
+
+  def destroy
+    @article = Article.find_by_id(params[:id])
+    @article.destroy
+    redirect_to user_articles_path
+  end        
 
 	private
 
