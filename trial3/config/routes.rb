@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-
-  get 'articles/show'
-
-  get 'articles/edit'
-
-  get 'articles/new'
-
   root to: "users#index"
 
 #Users
@@ -19,4 +11,10 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy" # <-- strictly speaking this isn't RESTful (it should be a DELETE not GET), but it's super conveient to do it this way
   post "/sessions", to: "sessions#create"
+
+#Articles
+  get "/users/:user_id/articles", to: "articles#index", as: "user_articles"
+  get 'articles/show'
+  get 'articles/edit'
+  get 'articles/new'  
 end
