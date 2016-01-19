@@ -1,0 +1,16 @@
+  <div>
+    <h3>Artist: <%= @album.artist %></h3>
+  </div>
+  <br>
+  <div>
+  <img src=" <%=@album.cover_art%> ">
+  </div>
+  <div>
+  	<p>Album: <%= @album.album %></p>
+  </div>
+  <div>
+
+  <%= button_to "Edit", edit_album_path(:id => @album.id), method: :get %> 
+  <%= button_to "Delete", delete_album_path(:id => @album.id), method: :delete %>
+
+  <%= link_to 'Back', albums_path %>
