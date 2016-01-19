@@ -1,7 +1,8 @@
 <h1>Albums</h1>
 
 <% @albums.each do |album| %>
-	<ul>    
+	<ul>   
+	<li><img src=" <%= album.cover_art%> "></li> 
     <li>Album: <%= album.artist %> - <%= link_to album.album, "/albums/#{album.id}" %></li>
   </ul>  
 <% end %>
