@@ -2,12 +2,10 @@ class AlbumsController < ApplicationController
   def index
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def new
-  end
+  end  
+
+  def create
+  render plain: params[:album].inspect  	
+  end  
 end
