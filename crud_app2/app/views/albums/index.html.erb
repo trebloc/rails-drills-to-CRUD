@@ -2,6 +2,6 @@
 
 <% @albums.each do |album| %>
 	<ul>    
-    <li>Album: <%= album.artist %> - <%= link_to album.album %></li>
+    <li>Album: <%= album.artist %> - <%= link_to album.album, "/albums/#{album.id}" %></li>
   </ul>  
 <% end %>
