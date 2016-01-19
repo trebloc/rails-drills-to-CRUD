@@ -5,3 +5,5 @@
     <li>Album: <%= album.artist %> - <%= link_to album.album, "/albums/#{album.id}" %></li>
   </ul>  
 <% end %>
+
+<%= link_to 'New Album', new_album_path %>
