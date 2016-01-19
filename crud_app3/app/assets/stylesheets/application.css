@@ -29,5 +29,9 @@ nav {
 
 body {
 	font-family: monospace;
+	font-size: 20px;
 }
 
+ul {
+	list-style-type: none;
+}
