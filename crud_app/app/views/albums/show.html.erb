@@ -8,6 +8,9 @@
   <div>
   	<p>Album: <%= @album.album %></p>
   </div>
+    <div>
+    <p>Year: <%= @album.year %></p>
+  </div>
   <div>
 
   <%= button_to "Edit", edit_album_path(:id => @album.id), method: :get %> 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119070808) do
+ActiveRecord::Schema.define(version: 20160128033400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160119070808) do
     t.string   "cover_art"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "year"
   end
 
   create_table "comments", force: :cascade do |t|
