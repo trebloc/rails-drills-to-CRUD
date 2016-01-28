@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: crud_app_development
+  database: crud_app3_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: crud_app
+  #username: crud_app3
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: crud_app_test
+  database: crud_app3_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: crud_app_production
-  username: crud_app
-  password: <%= ENV['CRUD_APP_DATABASE_PASSWORD'] %>
+  database: crud_app3_production
+  username: crud_app3
+  password: <%= ENV['CRUD_APP3_DATABASE_PASSWORD'] %>
